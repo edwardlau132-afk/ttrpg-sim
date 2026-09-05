@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://c3k8fp1un01aw"]
+
+[ext_resource type="Script" uid="uid://c2y5f5dfpm6y3" path="res://scripts/main_menu.gd" id="1"]
+
+[node name="MainMenu" type="Control" unique_id=215430342]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Center" type="CenterContainer" parent="." unique_id=593261584]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Center" unique_id=260634625]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="Center/VBox" unique_id=452276364]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "TTRPG Simulator"
+horizontal_alignment = 1
+
+[node name="NameInput" type="LineEdit" parent="Center/VBox" unique_id=1489479931]
+layout_mode = 2
+
+[node name="PasswordInput" type="LineEdit" parent="Center/VBox" unique_id=793479697]
+layout_mode = 2
+secret = true
+
+[node name="IPInput" type="LineEdit" parent="Center/VBox" unique_id=526516336]
+layout_mode = 2
+
+[node name="PortInput" type="LineEdit" parent="Center/VBox" unique_id=1920914471]
+layout_mode = 2
+
+[node name="HostButton" type="Button" parent="Center/VBox" unique_id=411670469]
+layout_mode = 2
+text = "Host Game"
+
+[node name="JoinButton" type="Button" parent="Center/VBox" unique_id=784668261]
+layout_mode = 2
+text = "Join Game"
+
+[node name="StatusLabel" type="Label" parent="Center/VBox" unique_id=2120204520]
+layout_mode = 2
+autowrap_mode = 3

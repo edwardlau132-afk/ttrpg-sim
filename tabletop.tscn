@@ -1,0 +1,98 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/tabletop.gd" id="1"]
+
+[node name="Tabletop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1")
+
+[node name="HSplit" type="HSplitContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+split_offset = 900
+
+[node name="BoardRoot" type="Node2D" parent="HSplit"]
+# 2D board today. To go 3D: replace this node with a Node3D containing a
+# Camera3D and a ground/plane mesh, and give Token-equivalents a 3D script.
+# Everything else in tabletop.gd only calls GameState, so it keeps working.
+
+[node name="MapBackground" type="TextureRect" parent="HSplit/BoardRoot"]
+offset_right = 900.0
+offset_bottom = 700.0
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TokenLayer" type="Node2D" parent="HSplit/BoardRoot"]
+
+[node name="SidePanel" type="Control" parent="HSplit"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="HSplit/SidePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ButtonsRow" type="HBoxContainer" parent="HSplit/SidePanel/VBox"]
+layout_mode = 2
+
+[node name="CharacterSheetButton" type="Button" parent="HSplit/SidePanel/VBox/ButtonsRow"]
+layout_mode = 2
+text = "Character Sheet"
+
+[node name="AddTokenButton" type="Button" parent="HSplit/SidePanel/VBox/ButtonsRow"]
+layout_mode = 2
+text = "Add Token"
+
+[node name="LoadMapButton" type="Button" parent="HSplit/SidePanel/VBox/ButtonsRow"]
+layout_mode = 2
+text = "Load Map"
+
+[node name="PlayerList" type="ItemList" parent="HSplit/SidePanel/VBox"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="DicePanel" type="VBoxContainer" parent="HSplit/SidePanel/VBox"]
+layout_mode = 2
+
+[node name="FormulaRow" type="HBoxContainer" parent="HSplit/SidePanel/VBox/DicePanel"]
+layout_mode = 2
+
+[node name="FormulaInput" type="LineEdit" parent="HSplit/SidePanel/VBox/DicePanel/FormulaRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "e.g. 2d6+3"
+
+[node name="RollButton" type="Button" parent="HSplit/SidePanel/VBox/DicePanel/FormulaRow"]
+layout_mode = 2
+text = "Roll"
+
+[node name="QuickRow" type="HBoxContainer" parent="HSplit/SidePanel/VBox/DicePanel"]
+layout_mode = 2
+
+[node name="LogPanel" type="PanelContainer" parent="HSplit/SidePanel/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LogDisplay" type="RichTextLabel" parent="HSplit/SidePanel/VBox/LogPanel"]
+layout_mode = 2
+bbcode_enabled = true
+scroll_following = true
+
+[node name="ChatRow" type="HBoxContainer" parent="HSplit/SidePanel/VBox"]
+layout_mode = 2
+
+[node name="ChatInput" type="LineEdit" parent="HSplit/SidePanel/VBox/ChatRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Say something..."
+
+[node name="ChatSend" type="Button" parent="HSplit/SidePanel/VBox/ChatRow"]
+layout_mode = 2
+text = "Send"

@@ -1,0 +1,39 @@
+{
+  "system_name": "Generic Fantasy",
+  "sections": [
+    {
+      "title": "Identity",
+      "fields": [
+        { "key": "name", "label": "Character Name", "type": "text", "default": "" },
+        { "key": "class", "label": "Class", "type": "text", "default": "" },
+        { "key": "level", "label": "Level", "type": "number", "default": 1, "min": 1, "max": 20 },
+        { "key": "race", "label": "Race / Ancestry", "type": "text", "default": "" }
+      ]
+    },
+    {
+      "title": "Ability Scores",
+      "fields": [
+        { "key": "str", "label": "Strength", "type": "number", "default": 10, "min": 1, "max": 30 },
+        { "key": "dex", "label": "Dexterity", "type": "number", "default": 10, "min": 1, "max": 30 },
+        { "key": "con", "label": "Constitution", "type": "number", "default": 10, "min": 1, "max": 30 },
+        { "key": "int", "label": "Intelligence", "type": "number", "default": 10, "min": 1, "max": 30 },
+        { "key": "wis", "label": "Wisdom", "type": "number", "default": 10, "min": 1, "max": 30 },
+        { "key": "cha", "label": "Charisma", "type": "number", "default": 10, "min": 1, "max": 30 }
+      ]
+    },
+    {
+      "title": "Combat",
+      "fields": [
+        { "key": "hp_max", "label": "Max HP", "type": "number", "default": 10, "min": 0, "max": 999 },
+        { "key": "hp_current", "label": "Current HP", "type": "number", "default": 10, "min": 0, "max": 999 },
+        { "key": "ac", "label": "Armor Class", "type": "number", "default": 10, "min": 0, "max": 40 }
+      ]
+    },
+    {
+      "title": "Notes",
+      "fields": [
+        { "key": "notes", "label": "Notes / Inventory", "type": "multiline", "default": "" }
+      ]
+    }
+  ]
+}
